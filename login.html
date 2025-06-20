@@ -1,0 +1,158 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="website icon" type="png" href="Siyuu Studio.png">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e8f5e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 350px;
+    }
+
+    #judul {
+        text-align: center;
+        color: #2e7d32;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    /* button login */
+    #loginbutton {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #loginbutton:hover {
+        background-color: #1b5e20;
+    }
+
+    /* button logout */
+    #logoutbutton {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #logoutbutton:hover {
+        background-color: #1b5e20;
+    }
+
+    /* button buat akun */
+    #buatakun {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #buatakun:hover {
+        background-color: #1b5e20;
+    }
+
+    .message {
+        margin-top: 15px;
+        text-align: center;
+        font-weight: bold;
+    }
+</style>
+
+
+</style>
+
+<body id="body">
+    <!-- CONTENT -->
+    <div id="container">
+        <h2 id="judul">LOGIN</h2>
+        <input type="text" placeholder="username" id="usernameInput">
+        <input type="password" placeholder="password" id="passwordInput">
+        <button onclick="onLogin()" id="loginButton">LOGIN</button>
+        <button onclick="onLogout()" id="logoutButton">LOGOUT</button>
+        <button id="buatAkun" onclick="window.location.href='buatAkun.html'">BUAT AKUN</button>
+        <div class="message" id="login-message"></div>
+        <br />
+
+    </div>
+    <script type="application/javascript">
+        let usernameInput = document.getElementById('usernameInput')
+        let passwordInput = document.getElementById('passwordInput')
+        let loginButton = document.getElementById('loginButton')
+        let logoutButton = document.getElementById('logoutButton')
+        let buatAkun = document.getElementById('buatAkun')
+
+
+        logoutButton.style.display = "none";
+
+
+        function onLogin() {
+            const inputUsername = usernameInput.value.trim();
+            const inputPassword = passwordInput.value;
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const matchedUser = users.find(user =>
+                user.username === inputUsername && user.password === inputPassword
+            );
+
+            if (matchedUser) {
+                localStorage.setItem("currentUser", matchedUser.username);
+                document.getElementById('login-message').style.color = 'green';
+                document.getElementById('login-message').textContent = "Login berhasil!";
+                logoutButton.style.display = "block";
+                buatAkun.style.display = "none";
+                usernameInput.style.display = "none";
+                passwordInput.style.display = "none";
+                loginButton.style.display = "none";
+            } else {
+                document.getElementById('login-message').style.color = 'red';
+                document.getElementById('login-message').textContent = "Username atau password salah.";
+            }
+        }
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                onLogin();
+            }
+        });
+
+
+        function onLogout() {
+            localStorage.removeItem("currentUser");
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>
