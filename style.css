@@ -1,0 +1,129 @@
+    .body {
+        font-family: Arial, sans-serif;
+        background-color: #e8f5e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    #container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: 350px;
+    }
+
+    #judul {
+        text-align: center;
+        color: #2e7d32;
+    }
+
+    .input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    /* button login */
+    #loginbutton {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #loginbutton:hover {
+        background-color: #1b5e20;
+    }
+
+    /* button logout */
+    #logoutbutton {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        margin-top: 10px;
+        background-color: #d82121;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #logoutbutton:hover {
+        background-color: #fd6c6c;
+    }
+
+    /* button buat akun */
+    #buatakun {
+        width: 100%;
+        padding: 10px;
+        margin: 5px;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    #buatakun:hover {
+        background-color: #1b5e20;
+    }
+
+    .message {
+        margin: 15px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e8f5e9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px;
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b5e20;
+    }
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-weight: bold;
+    }
